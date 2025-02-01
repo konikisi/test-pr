@@ -1,7 +1,7 @@
 # ch 8.1.3 ui.py
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,QMessageBox, QPlainTextEdit, QHBoxLayout, QLineEdit, QComboBox, QLabel) 
 # QLabel 추가
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QFont # QFont 추가
 
 
 from PyQt5 import QtCore 
@@ -23,6 +23,7 @@ class View(QWidget):
         self.te1.setReadOnly(True)
 
         self.lbl1 = QLabel('v2.3.0',self) # 버전 정보를 나타낼 lbl1 위젯 만들기
+        self.lbl1.setFont(QFont('Consolas', 10)) # 폰트 설정 추가, Consolas, 사이즈 10
         self.btn1 = QPushButton('Calc',self) # 버튼 이름 바꾸기
         self.btn2 = QPushButton('Clear',self)
 
