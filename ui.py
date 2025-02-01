@@ -1,10 +1,10 @@
-# ch 6.6.1 ui.py
-from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,QMessageBox, QPlainTextEdit, QHBoxLayout, QLineEdit, QComboBox) 
-# QLineEdit, QComboBox 추가
+# ch 8.1.3 ui.py
+from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,QMessageBox, QPlainTextEdit, QHBoxLayout, QLineEdit, QComboBox, QLabel) 
+# QLabel 추가
 from PyQt5.QtGui import QIcon
-# from PyQt5.QtCore import QDate, Qt #날짜와 주요 속성값을 쓰기 위해 추가
 
-from PyQt5 import QtCore # 모듈 추가
+
+from PyQt5 import QtCore 
 
 class View(QWidget):
     
@@ -18,9 +18,11 @@ class View(QWidget):
 
         
 
+
         self.te1 = QPlainTextEdit() #텍스트 에디트 위젯 생성
         self.te1.setReadOnly(True)
 
+        self.lbl1 = QLabel('v2.3.0',self) # 버전 정보를 나타낼 lbl1 위젯 만들기
         self.btn1 = QPushButton('Calc',self) # 버튼 이름 바꾸기
         self.btn2 = QPushButton('Clear',self)
 
@@ -42,7 +44,7 @@ class View(QWidget):
 
 
         hbox = QHBoxLayout()
-        hbox.addStretch(1) #공백
+        hbox.addWidget(self.lbl1) # 버전 정보를 나타내기 위한 lbl1 위젯 만들기
         hbox.addWidget(self.btn1) # 버튼 1 배치
         hbox.addWidget(self.btn2) # 버튼 2 배치
 
